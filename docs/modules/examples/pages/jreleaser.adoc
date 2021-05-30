@@ -35,6 +35,8 @@ project:
   java:
     groupId: org.jreleaser
     version: 8
+  extraProperties:
+    inceptionYear: 2020
 
 # The repository is hosted at https://github.com/jreleaser/jreleaser
 # which means the default username would be `jreleaser` however a
@@ -107,7 +109,13 @@ assemble:
         - java.naming
         - java.rmi
         - java.security.jgss
+        - java.security.sasl
         - java.sql
+        - jdk.crypto.ec
+        - jdk.crypto.cryptoki
+        - jdk.security.auth
+        - jdk.security.jgss
+        - org.openjsse
       targetJdks:
         - path: '{{jdkPathPrefix}}-macosx_x64/zulu-11.jdk/Contents/Home'
           platform: 'osx'
